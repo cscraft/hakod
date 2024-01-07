@@ -1,23 +1,46 @@
+<!doctype html>
 <html>
   <head>
-    <!-- A-Frameを読み込む -->
+    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <!-- AR.jsを読み込む -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <title>Hello AR.js World! Step1</title>
   </head>
-  <body style="margin: 0; overflow: hidden">
-    <!-- シーンの作成、VRモードのUI非表示 -->
-    <a-scene embedded arjs vr-mode-ui="enabled: false">
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      loading-screen="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      embedded
+      gesture-detector
+    >
       <a-assets>
-        <!-- 3Dモデルを読み込む -->
-        <a-asset-item id="asset-Hakod" src="./assets/Hakod02.glb" scale="1 1 1"></a-asset-item>
+        <a-asset-item
+          id="asset-eevee"
+          src="./assets/Hakod02.glb"
+        ></a-asset-item>
       </a-assets>
-      <!-- マーカーを設定する -->
-      <a-marker type="pattern" url="./assets/pattern-mark.patt">
-        <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#asset-Hakod" rotation="-90 0 0"></a-entity>
+
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="./assets/pattern-mark.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          class="clickable"
+          gltf-model="#asset-eevee"
+          scale="1.6 1.6 1.6"
+          gesture-handler
+        ></a-entity>
       </a-marker>
-      <!-- カメラを追加 -->
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
