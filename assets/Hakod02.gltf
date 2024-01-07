@@ -29,9 +29,9 @@
 			"name":"\u30de\u30c6\u30ea\u30a2\u30eb",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.1384550929069519,
-					0.010329357348382473,
-					0.0012140260078012943,
+					0.3,
+					0.022,
+					0.003,
 					1
 				],
 				"metallicFactor":0,
