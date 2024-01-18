@@ -16,6 +16,12 @@
 		{
 			"mesh":0,
 			"name":"Hakod01\u3000pot arabesque (1)",
+			"rotation":[
+				-0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
+			],
 			"scale":[
 				0.029999999329447746,
 				0.029999999329447746,
@@ -29,9 +35,9 @@
 			"name":"\u30de\u30c6\u30ea\u30a2\u30eb",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.3,
-					0.022,
-					0.003,
+					0.30000001192092896,
+					0.022381318733096123,
+					0.0026305140927433968,
 					1
 				],
 				"metallicFactor":0,
@@ -107,7 +113,7 @@
 	"buffers":[
 		{
 			"byteLength":1406664,
-			"uri":"Hakod02.bin"
+			"uri":"Hakod03.bin"
 		}
 	]
 }
