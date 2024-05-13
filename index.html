@@ -22,7 +22,11 @@
         <a-asset-item
           id="asset-eevee"
           src="./assets/Hakod02.gltf"
-        ></a-asset-item>
+        >
+          <a-entity
+            position="0 0 0"
+          ></a-entity>
+        </a-asset-item>
       </a-assets>
 
       <a-marker
@@ -43,7 +47,13 @@
         ></a-entity>
       </a-marker>
 
-      <a-entity camera></a-entity>
+      <a-entity
+        camera="active: true"
+        look-controls
+        wasd-controls
+        position="0 0 20"
+        data-aframe-default-camera>
+      </a-entity>
     </a-scene>
   </body>
 </html>
