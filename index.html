@@ -6,40 +6,44 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    <title>鎌倉彫AR2</title>
+    <title>鎌倉彫AR</title>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene
       vr-mode-ui="enabled: false;"
       loading-screen="enabled: false;"
-      renderer="logarithmicDepthBuffer: true; precision: medium;"
+      renderer="logarithmicDepthBuffer: true;"
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
       embedded
       gesture-detector
     >
-      <a-entity>
-        <a-assets
+      <a-assets>
+        <a-asset-item
+          id="asset-eevee"
+          src="./assets/Hakod02.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="./assets/pattern-HakoQR.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          class="clickable"
+          gltf-model="#asset-eevee"
           scale="0.5 0.5 0.5"
-          position="0 0 0"
-        >
-          <a-asset-item
-            id="asset-eevee"
-            src="./assets/Hakod02.gltf"
-          ></a-asset-item>
-        </a-assets>
-      </a-entity>
+          position="0 0 0.4"
+          rotation="-90 0 0"
+          gesture-handler
+        ></a-entity>
+      </a-marker>
 
-
-
-      <a-entity
-        camera="active: true"
-        look-controls
-        wasd-controls
-        position="0 0 20"
-        data-aframe-default-camera>
-      </a-entity>
-
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
