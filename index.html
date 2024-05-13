@@ -15,7 +15,6 @@
       loading-screen="enabled: false;"
       renderer="logarithmicDepthBuffer: true; precision: medium;"
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      webxr="optionalFeatures: hit-test, dom-overlay; overlayElement:#overlay;"
       embedded
       gesture-detector
     >
@@ -31,23 +30,7 @@
         </a-assets>
       </a-entity>
 
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="./assets/pattern-HakoQR.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-      >
-        <a-entity
-          class="clickable"
-          gltf-model="#asset-eevee"
-          scale="0.5 0.5 0.5"
-          position="0 0 0"
-          rotation="-90 0 0"
-          gesture-handler
-        ></a-entity>
-      </a-marker>
+
 
       <a-entity
         camera="active: true"
